@@ -4,6 +4,24 @@
   </head>
   <body>
     <script src='https://www.gstatic.com/firebasejs/3.7.3/firebase.js'></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "",
+        authDomain: "<project-id>.firebaseapp.com",
+        databaseURL: "https://<project-id>.firebaseio.com",
+        storageBucket: "<project-id>.appspot.com",
+        messagingSenderId: ""
+      };
+      firebase.initializeApp(config);
+      
+      firebase.auth().signInAnonymously().catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // ...
+      });
+    </script>
     <script src='../analytics.js'></script>
   </body>
 </html>
