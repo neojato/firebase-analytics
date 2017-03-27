@@ -1,7 +1,7 @@
 (function (firebase, $) {
-  var analytics = new Firebase('https://fir-analytics-9bac7.firebaseio.com/');
+  var analytics = firebase.database().ref();
 
-  $(document).on('ready', function () {
+  $(document).ready(function () {
     var $totalVisitors = $('#total-visitors');
     var $activeVisitors = $('#active-visitors');
     var $pastVisitors = $('#past-visitors');
@@ -12,7 +12,7 @@
 
     var activeVisitors = analytics.child('activeVisitors');
     activeVisitors.on('child_added', function (snapshot) {
-      var n = snapshot.name();
+      var n = snapshot.key;
       var v = snapshot.val();
       $activeVisitors.prepend(
       '<li id="active-visitor' + n + '">' + n + ':' +
@@ -25,9 +25,9 @@
       );
     });
 
-    var pastVisitors = analytics.child('pastVisitors').endAt().limit(3);
+    var pastVisitors = analytics.child('pastVisitors').limitToLast(3);
     pastVisitors.on('child_added', function (snapshot) {
-      var n = snapshot.name();
+      var n = snapshot.key;
       var v = snapshot.val();
       $pastVisitors.prepend(
       '<li id="past-visitor' + n + '">' + n + ':' +
@@ -43,11 +43,11 @@
     });
 
     activeVisitors.on('child_removed', function (snapshot) {
-      $('#active-visitor' + snapshot.name()).remove(); 
+      $('#active-visitor' + snapshot.key).remove(); 
     });
 
     pastVisitors.on('child_removed', function (snapshot) {
-      $('#past-visitor' + snapshot.name()).remove(); 
+      $('#past-visitor' + snapshot.key).remove(); 
     });
 
   });
