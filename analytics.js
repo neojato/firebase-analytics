@@ -1,4 +1,4 @@
-(function (Firebase) {
+(function (firebase) {
   var analytics = new Firebase('https://fir-analytics-9bac7.firebaseio.com/');
   var activeVisitors = analytics.child('activeVisitors');
 
@@ -25,4 +25,4 @@
     totalVisitors.set(snapshot.val() + 1);
   });
 
-})(Firebase);
+})(firebase);
