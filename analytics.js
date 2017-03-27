@@ -6,3 +6,8 @@ activeVisitors.push({
   arrivedAt: Firebase.ServerValue.TIMESTAMP,
   userAgent: navigator.userAgent
 });
+
+var totalVisitors = analytics.child('totalVisitors');
+totalVisitors.transaction(function (currentData) {
+  return currentData + 1;
+});
