@@ -7,10 +7,9 @@ firebase-analytics
 
 ## Setup
 
-1. Clone this repo and run `firebase login` and then `firebase init` to setup/link with a Firebase Project
-1. Copy ```config.js.template``` to ```config.js```
-1. From the [Firebase Console], select your project and copy the web config settings into ```config.js```
-1. Edit ```firebase.json``` to use ```dashboard.html``` for the key ```hosting.rewrites.destination```
+1. Install/Update the Firebase CLI by running the following command: `npm install -g firebase-tools` (may need to use `sudo` depending on your local setup)
+1. Clone this repo and via the CLI run `firebase login` and then `firebase init` to setup/link with a Firebase Project
+1. Edit `firebase.json` to use `/dashboard.html` as the value for the key `hosting.rewrites.destination`
 
 ## Deploy
 
