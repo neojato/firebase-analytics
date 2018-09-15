@@ -1,15 +1,19 @@
 <html>
   <head>
     <title>Analytics with Firebase</title>
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/5.5.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/5.5.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.5.0/firebase-database.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    <script src='https://code.jquery.com/jquery-3.2.1.js'></script>
   </head>
   <body>
     <img src="/images/firebase-analytics.png" style="max-width: 100%; height: auto; width: auto\9;" alt="Firebase Analytics" title="Firebase Analytics" />
-    <div align="center"><h1>Test tracking page!</h1></div>
-    <script src="/__/firebase/3.7.6/firebase-app.js"></script>
-    <script src="/__/firebase/3.7.6/firebase-auth.js"></script>
-    <script src="/__/firebase/3.7.6/firebase-database.js"></script>
-    <script src="/__/firebase/init.js"></script>
-    <script src='../config.js'></script>
-    <script src='../analytics.js'></script>
+    <div style="text-align: center;"><h1>Test tracking page!</h1></div>
+    <script src='../config.js' defer></script>
+    <script src='../analytics.js' defer></script>
   </body>
 </html>
