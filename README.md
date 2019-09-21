@@ -3,8 +3,6 @@ firebase-analytics
 
 Based on [Building a Realtime App with Firebase] - Airpair Tutorial
 
-(updated for Firebase 3.x)
-
 ## Setup
 
 1. Install/Update the Firebase CLI by running the following command: `npm install -g firebase-tools`
